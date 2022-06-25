@@ -8,7 +8,7 @@ DNBC4tools 软件安装使用说明书!
 
 .. toctree::
    :maxdepth: 2
-   :caption: 目录:
+   :glob:
    
    preface
    chapters/*
