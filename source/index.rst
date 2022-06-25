@@ -10,13 +10,5 @@ Welcome to DNBC4tools's documentation!
    :maxdepth: 2
    :caption: Contents:
    
-   mark.md
-
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+   preface
+   chapters/*
