@@ -18,7 +18,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'DNBC4tools'
-copyright = '2022, lishuangshuang'
+copyright = '2022, MGI Tech Co., Ltd.'
 author = 'lishuangshuang'
 
 # The full version, including alpha/beta/rc tags
@@ -66,30 +66,3 @@ html_theme = "sphinx_rtd_theme"
 html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
 extensions = ['recommonmark','sphinx_markdown_tables']
-
-
-
-latex_elements = {  # The paper size ('letterpaper' or 'a4paper').
-    'papersize': 'a4paper',  # The font size ('10pt', '11pt' or '12pt').
-    'pointsize': '16pt',
-    'classoptions': ',oneside', 'babel': '',  # 必须
-    'inputenc': '',  # 必须
-    'utf8extra': '',  # 必须
-    # Additional stuff for the LaTeX preamble.
-    'preamble': """\usepackage{xeCJK} \setlength{\parindent}{2em}\setCJKmainfont{WenQuanYi Micro Hei} \setCJKmonofont[Scale=0.9]{WenQuanYi Micro Hei Mono}  \setCJKfamilyfont{song}{WenQuanYi Micro Hei} \setCJKfamilyfont{sf}{WenQuanYi Micro Hei} \XeTeXlinebreaklocale "zh"\XeTeXlinebreakskip = 0pt plus 1pt"""
-}
-
-'''
-'preamble': r"""
-\usepackage{xeCJK}
-\usepackage{indentfirst}
-\setlength{\parindent}{2em}
-\setCJKmainfont{WenQuanYi Micro Hei}
-\setCJKmonofont[Scale=0.9]{WenQuanYi Micro Hei Mono}
-\setCJKfamilyfont{song}{WenQuanYi Micro Hei}
-\setCJKfamilyfont{sf}{WenQuanYi Micro Hei}
-\XeTeXlinebreaklocale "zh"
-\XeTeXlinebreakskip = 0pt plus 1pt
-"""
-'''
-
