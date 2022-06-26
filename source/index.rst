@@ -23,8 +23,8 @@ DNBelab_C_Series_HT_scRNA-analysis-software 单细胞RNA分析软件
 用于DNBelab C4 便携式单细胞系统的RNA数据分析，DNBelab_C_Series_HT_scRNA-analysis-software的网页链接 `https://github.com/MGI-tech-bioinformatics/DNBelab_C_Series_HT_scRNA-analysis-software>`_
 
 .. toctree::
-   :maxdepth: 2
-   :glob:
+   :maxdepth: 1
+   :hidden:
    
    Installation
    Database
