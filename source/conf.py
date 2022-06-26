@@ -64,9 +64,3 @@ html_static_path = ['_static']
 import sphinx_rtd_theme
 html_theme = "sphinx_rtd_theme"
 html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
-
-<<<<<<< HEAD
-extensions = ['recommonmark','sphinx_markdown_tables']
-=======
-extensions = ['recommonmark','sphinx_markdown_tables']
->>>>>>> 81b51a03bffb1e85c6384369163abcbb21acc8e9
