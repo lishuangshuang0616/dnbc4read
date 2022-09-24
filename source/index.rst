@@ -27,7 +27,7 @@ DNBelab C系列细胞组学整体产品组合，基于独特的DNBelab C系列�
    :hidden:
    
    Installation
-   Database
+   analysis
    Use
    Description
    FAQ
