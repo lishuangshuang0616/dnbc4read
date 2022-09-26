@@ -620,6 +620,7 @@ config.json文件包含一下内容：
 准备主分析脚本：
 
 .. code:: bash
+
    # export环境变量，将所有路径替换成真实分析路径
    export PATH=/miniconda3/envs/DNBC4tools/bin:$PATH
    export LD_LIBRARY_PATH=/miniconda3/envs/DNBC4tools/lib:$LD_LIBRARY_PATH
@@ -629,6 +630,7 @@ config.json文件包含一下内容：
 multi*\ ，修改scripts目录下的\ ``wdl.json``\ ，替换成真实路径，使用命令
 
 .. code:: bash
+
    /miniconda3/envs/DNBC4tools/bin/python creat_wdl_json.py --infile samplelist --outdir outdir
 
 .. _22-运行分析流程:
@@ -637,6 +639,7 @@ multi*\ ，修改scripts目录下的\ ``wdl.json``\ ，替换成真实路径，�
 ~~~~~~~~~~~~~~~~
 
 .. code:: bash
+  
    ### 运行分析流程
    sh run.sh
 
