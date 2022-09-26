@@ -208,15 +208,10 @@ run命令为运行主程序
    # 主程序示例
 
    DNBC4tools run --cDNAfastq1 cDNA_R1.fastq.gz \
-
    		--cDNAfastq2 cDNA_R2.fastq.gz \
-
    		--oligofastq1 oligo1_1.fq.gz,oligo2_1.fq.gz \
-
    		--oligofastq2 oligo1_2.fq.gz,oligo2_2.fq.gz \
-
    		--starIndexDir /database/Mouse/mm10/ --gtf /database/Mouse/mm10/genes.gtf \
-
    		--name test --species Mouse --thread 10
 
 分析参数如下：
@@ -451,11 +446,8 @@ analysis –resolution调整分群的分辨率，分析完成后在使用 DNBC4t
 .. code:: bash
 
    # 分析示例
-
    DNBC4tools multi --list samplelist
-
    		--starIndexDir /database/Mouse/mm10/ --gtf /database/Mouse/mm10/genes.gtf \
-
    		--thread 10
 
 其中samplelist的格式如下：
@@ -463,9 +455,7 @@ analysis –resolution调整分群的分辨率，分析完成后在使用 DNBC4t
 .. code:: bash
 
    test1 cDNA1_L01_1.fq.gz;cDNA1_L01_2.fq.gz    oligo1_L01_1.fq.gz,oligo1_L02_1.fq.gz;/oligo1_L01_2.fq.gz,oligo1_L02_2.fq.gz Mouse
-
    test2 cDNA2_L01_1.fq.gz,cDNA2_L02_1.fq.gz;cDNA1_L01_2.fq.gz,cDNA2_L02_2.fq.gz   oligo2_L01_1.fq.gz;/oligo2_L01_2.fq.gz  Mouse
-
    test3 cDNA3_L01_1.fq.gz;cDNA3_L01_2.fq.gz    oligo3_L01_1.fq.gz,oligo3_L02_1.fq.gz;/oligo3_L01_2.fq.gz,oligo3_L02_2.fq.gz Mouse
 
 -  文件包含四列，使用水平制表符(\t)进行分隔
@@ -485,14 +475,9 @@ analysis –resolution调整分群的分辨率，分析完成后在使用 DNBC4t
 
 .. code:: bash
 
-   ### 删除该目录下所有样本的中间大文件
-
+   # 删除该目录下所有样本的中间大文件
    DNBC4tools clean
-
-   
-
-   ### 删除该目录下样本sampleA的中间大文件
-
+   # 删除该目录下样本sampleA的中间大文件
    DNBC4tools clean --name sampleA
 
 分析参数如下：
