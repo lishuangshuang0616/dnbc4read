@@ -79,7 +79,7 @@ Conda是一个开源的软件包管理系统和环境管理系统，可在Window
 3. 更新
 ~~~~~~~
 
-在版本更新时，不需要对环境进行重新安装
+在版本更新时，不需要对环境进行重新安装，只需要更新python包dnbc4tools
 
 .. code:: bash
 
@@ -108,7 +108,6 @@ Documentation <https://docs.docker.com/engine/install/>`__
 .. code:: bash
 
    # 下载docker镜像
-
    docker pull lishuangshuang3/dnbc4tools
 
 .. _2-singularity:
@@ -124,6 +123,5 @@ singularity安装可参考\ https://docs.sylabs.io/guides/3.5/user-guide/introdu
 .. code:: bash
 
    # 创建sif文件
-
    singularity build dnbc4tools.sif docker://lishuangshuang3/dnbc4tools
 
