@@ -17,32 +17,6 @@
 
 github软件包含5个目录、 2个说明文件及 1个 yaml文件
 
-| ├── CHANGELOG.md 软件版本升级说明
-| ├── DNBC4tools 软件主要脚本程序和配置文件
-| │ ├── config 文库结构文件和白名单信息
-| │ ├── DNBC4tools.py 主命令
-| │ ├── **init**.py init文件
-| │ ├── rna scRNA的主要脚本
-| │ ├── soft 软件中使用的编译程序
-| │ ├── template 报告模板
-| │ └── tools 软件命令脚本
-| ├── DNBC4tools.yaml conda环境安装包
-| ├── doc 使用说明
-
-| ├── example 使用示例
-| │ ├── DNBC4tools
-| │ └── wdl
-| ├── LICENSE 软件license
-| ├── README.md 软件主说明
-| ├── scripts 软件其他脚本
-| │ ├── changeBamTag.py
-| │ ├── creat_sample_list.py
-| │ ├── creat_wdl_json.py
-| │ ├── example
-| │ └── wdl.json
-| └── wdl WDL分析程序
-|  └── DNBC4_scRNA.wdl
-
 =============== ====================================================
 文件目录名称    描述
 =============== ====================================================
