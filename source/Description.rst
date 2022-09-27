@@ -331,3 +331,506 @@ bam计算细胞表达量矩阵 。
 
 3）\ **s1.get.similarityOfBeads** 计算 beads之间相似度（同一液滴内的
 beads具有较一致的 oligo droplet index）。
+
+输入参数如下：
+
++---------------------------+-----------+---------------------------+
+| 参数                      | 类型      | 描述                      |
++===========================+===========+===========================+
+| Sample name               | String    | 输入 样本 名称 。         |
++---------------------------+-----------+---------------------------+
+| CB_UB_count.txt           | File Path | cell barcode和 droplet    |
+|                           |           | index对应统计             |
+|                           |           | counts数目文件。          |
++---------------------------+-----------+---------------------------+
+| beads_barcodes.txt        | File Path | cell                      |
+|                           |           | calling获取的有效液滴内   |
+|                           |           | beads列表。               |
++---------------------------+-----------+---------------------------+
+| oligo_type8.txt           | File Path | oligo droplet             |
+|                           |           | index白名单文件。         |
++---------------------------+-----------+---------------------------+
+| Similarity.all.csv        | File Path | 输出所有 cell             |
+|                           |           | barcode之间               |
+|                           |           | 存在的相似度统计结果文件  |
+|                           |           | 。                        |
++---------------------------+-----------+---------------------------+
+| Similarity.droplet.csv    | File Path | 输出初步过滤后的 cell     |
+|                           |           | barcode相似度统计         |
+|                           |           | 结果文件（根据有效液滴内  |
+|                           |           | beads过滤）。             |
++---------------------------+-----------+---------------------------+
+| Simila                    | File Path | 对                        |
+| rity.droplet.filtered.csv |           | Similarity.drop           |
+|                           |           | let.csv中存在的相同条目进 |
+|                           |           | 行去除（第一列和第二列的  |
+|                           |           | cell barcode互换类型） 。 |
++---------------------------+-----------+---------------------------+
+| -n                        | Integer   | 程序运行所调用的进程数 。 |
++---------------------------+-----------+---------------------------+
+
+4）\ **combinedListOfBeads.py** 对相似度进行过滤并生成液滴内的
+beads对应信息。
+
+输入参数如下:
+
++----------------------+-----------+---------------------------+
+| 参数                 | 类型      | 描述                      |
++======================+===========+===========================+
+| --similarity_droplet | File Path | 初步过滤后的 cell         |
+|                      |           | barcode相似度统           |
+|                      |           | 计结果文件（根据真实有效  |
+|                      |           | beads过滤）。             |
++----------------------+-----------+---------------------------+
+| --beads_list         | File Path | cell                      |
+|                      |           | calling获取的有效液滴内   |
+|                      |           | beads列表。               |
++----------------------+-----------+---------------------------+
+| --combined_list      | File Path | 液滴内的                  |
+|                      |           | beads对应信息列表。       |
++----------------------+-----------+---------------------------+
+| --simi_threshold     | Float     | 默认值 :                  |
+|                      |           | 0.2。相似度过滤阈值。     |
++----------------------+-----------+---------------------------+
+
+5）\ **tagAdd** 将细胞 tag信息存入 bam文件中
+
+输入参数如下:
+
+========== ========= ===========================================
+参数       类型      描述
+========== ========= ===========================================
+-bam       File Path 输入final.bam文件。
+-file      File Path 有效液滴内beads对应信息列表 。
+-out       File Path 输出添加了细胞 tag信息后的 bam文件 。
+-tag_check TAG       默认值 : CB:Z:。 beads的 cell barcode信息。
+-tag_add   TAG       默认值 : DB:Z:。 添加细胞 tag信息。
+-n         Integer   程序运行所调用的进程数 。
+========== ========= ===========================================
+
+.. _123-输出项:
+
+1.2.3 输出项
+^^^^^^^^^^^^
+
+-  **beads_barcodes.txt** 有效液滴内 beads的 cell barcode信息文件。
+
+-  **beads_barcodes_hex.txt** 有效液滴内 beads的十六进制 cell
+   barcode信息文件。
+
+-  **cutoff.csv** 按照 umi数量排序的 cell barcode和是否为有效液滴内
+   beads。
+
+-  **beads_barcode_all.txt** 所有 beads的 cell barcode信息。
+
+-  **CB_UB_count.txt** oligo的 cell barcode和 droplet index组合
+   count统计表，统计每个磁珠 cell barcode捕获到的 droplet
+   index序列的UMIs数目。第一列表示 droplet index UMI数量，第二列是
+   droplet index序列，第三列是磁珠 cell barcode序列。
+
+-  **Similarity.all.csv** 所有beads之间存在的相似度统计结果文件。
+
+-  **Similarity.droplet.csv** 初步过滤后的 cell
+   barcode相似度统计结果文件有效液滴内 beads过滤）。
+
+-  **Similarity.droplet.filtered.csv** 对
+   Similarity.droplet.csv中存在的相同条目进行去除（第一列和第二列的 cell
+   barcode互换类型）。
+
+-  **combined_list.txt** 在同一液滴中的 beads的 cell
+   barcode组合的文件。第一列磁珠 cell barcode，第二列为 cell ID。
+
+-  **barcodeTranslate_hex.txt** barcodeTranslate.txt中 beads的 cell
+   barcode为十六进制 。
+
+-  **barcodeTranslate.txt** 在同一 液滴 中的 beads的 cell barcode组合
+   的文件。第一列磁珠 beads barcode，第二列为 cell
+   ID。（v2版本中与combined_list.txt相同）
+
+-  **cellNumber_merge.png** 每个 cell含有 beads数量统计结果条形图
+   png格式图片。
+
+-  **cellNumber_merge.pdf** 每个 cell含有 beads数量统计结果条形图
+   pdf格式图片。
+
+-  **filter_matrix** 细胞表达量矩阵目录。
+
+-  **cellCount_report.csv** 细胞统计信息文件。
+
+-  | **anno_decon_sorted.bam** 排序后的 anno_decon.bam（将合并后的细胞
+   | tag信息存入 bam文件 ）文件。
+
+-  **cell_count_detail.xls** 每个细胞中基因、umi的组合测序 reads的数量。
+
+-  **saturation.xls** 不同fraction饱和度分析结果 文件。
+
+部分结果内容展示：
+
+1）\ ``cellCount_report.csv`` 内容如下:
+
+-  **Fraction Reads in Cells**
+   位于有效液滴内beads且比对上转录本的reads和所有比对上转录本的reads的比值。
+
+-  **Estimated Number of Cells** 鉴定的细胞数量。
+
+-  **Total Reads Number of Cells** 所有比对上细胞的reads数量。
+
+-  **Mean reads per cell** 每个细胞中平均的reads数量。
+
+-  **Mean UMI counts per cell** 每个细胞中平均的umi数量。
+
+-  **Median UMI Counts per Cell** 细胞中umi数量的中位数。
+
+-  **Total Genes Detected** 统计所有比对上的基因数量。
+
+-  **Mean Genes per Cell** 每个细胞中平均的基因数量。
+
+-  **Median Genes per Cell** 细胞中基因数量的中位数。
+
+.. _13-质控聚类:
+
+1.3 质控聚类
+~~~~~~~~~~~~
+
+.. _131-功能描述:
+
+1.3.1 功能描述
+^^^^^^^^^^^^^^
+
+对细胞表达矩阵进行质控过滤双胞，低质量的细胞 。
+降维聚类区分不同细胞群体以及输出候选的各细胞群标记基因，对细胞群体注释。
+
+.. _132-输入项:
+
+1.3.2 输入项
+^^^^^^^^^^^^
+
+1）\ **QC_analysis.R** 对细胞表达矩阵进行过滤。
+
+输入参数如下:
+
++------+-----------+-------------------------------------------------+
+| 参数 | 类型      | 描述                                            |
++======+===========+=================================================+
+| -I   | Directory | 细胞表达矩阵文件目录 。                         |
++------+-----------+-------------------------------------------------+
+| -D   | Integer   | 默认值 : 20。 DoubletFinder预测双胞的           |
+|      |           | PCs参数显著的主成分的数量。                     |
++------+-----------+-------------------------------------------------+
+| -P   | Float     | 默认值 : 0.05。预测双胞比例。                   |
++------+-----------+-------------------------------------------------+
+| -M   | String    | 默认值 : auto。                                 |
+|      |           | 线粒体基因列表文件，auto表示选择基因名前缀为    |
+|      |           | mt或 MT的基因作为线粒体基因。                   |
++------+-----------+-------------------------------------------------+
+| -MP  | Integer   | 默认值 : 15。 过滤线粒体基因比例 。             |
++------+-----------+-------------------------------------------------+
+| -F   | Integer   | 默认值 : 200。 细胞含有的基因数目的最小值 。    |
++------+-----------+-------------------------------------------------+
+| -B   | String    | 样本名称 。                                     |
++------+-----------+-------------------------------------------------+
+| -O   | Director  | 输出文件路径。                                  |
++------+-----------+-------------------------------------------------+
+
+2）\ **Cluster_analysis.R**
+降维聚类区分不同细胞群体以及输出候选的各细胞群标记基因 。
+
+输入参数如下:
+
++------+-----------+-------------------------------------------------+
+| 参数 | 类型      | 描述                                            |
++======+===========+=================================================+
+| -I   | Directory | QC分析结果目录。                                |
++------+-----------+-------------------------------------------------+
+| -D   | Integer   | 默认值 : 20。用于                               |
+|      |           | PCA降维后的降维聚类使用的显著主成分的数量。     |
++------+-----------+-------------------------------------------------+
+| -PC  | Float     | 默认值 : 50。用于 PCA降维的主成分的数量。       |
++------+-----------+-------------------------------------------------+
+| -RES | Float     | 默认值 : 0.5。                                  |
+|      |           | 细胞聚类分辨率。该参数设置下游                  |
+|      |           | 聚类的细胞群体数量，增加该值能得到更多的分群。  |
++------+-----------+-------------------------------------------------+
+| -O   | Director  | 输出文件路径。                                  |
++------+-----------+-------------------------------------------------+
+| -SP  | String    | 输入样本物种名称。只有 Human和                  |
+|      |           | Mouse可以进行细胞群体注释分析。                 |
++------+-----------+-------------------------------------------------+
+
+.. _132-输出项:
+
+1.3.2 输出项
+^^^^^^^^^^^^
+
+1）过滤输出文件位于输出目录下的\ **QC**\ 目录内。
+
+-  **raw_QCplot.png**
+   所有细胞的基因、UMIs数目和线粒体比例小提琴图。如果未识别到线粒体基因将没有线粒体比例小提琴图。
+
+-  **filter_QCplot.png**
+   过滤后细胞的基因、UMIs数目和线粒体比例小提琴图。如果未识别到线粒体基因将没有线粒体比例小提琴图。
+
+-  **doublets_info.txt**
+   双胞统计结果文件。第一列为细胞名称，最后一列为是否鉴定为双胞。
+
+-  **QCobject.RDS** rds格式的文件用于存储 QC的结果用于后续降维聚类分析。
+
+2）降维聚类 输出文件位于输出目录下的 **Clustering**\ 目录内。
+
+-  **clustering_plot.png** 细胞聚类结果的 UMAP展示图片。
+
+-  **cluster.csv** 记录每个细胞
+   meta数据的表格文件（包括群体、umap坐标、umi数量、基因数量和预测的细胞类型）。
+
+-  **cluster_cell.stat** 细胞聚类的结果及每 个类群的细胞数目统计。
+
+-  **marker.csv** 所有
+   marker基因的表格文件第一列为基因名，第二列为群体、第三列矫正后的
+   p_value，第四列为
+   p_value，第五列为该基因在该群体与其他群体之间的差异倍数，第六列
+   pct.1为在当前 cluster细胞中检测到该基因表达的细胞比例，第七列
+   pct.2为在其它 cluster细胞中检测到该基因表达的细胞比例。
+
+-  **cell_report.csv** 用于降维聚类的细胞个数统计。
+
+-  **cluster_annotation.png** 细胞聚类且注释后的UMAP展示图片。
+
+-  **clustering_annotation_object.RDS**
+   rds格式的文件用于存储降维聚类注释的结果用于后续复现该分析结果。
+
+.. _14-报告生成:
+
+1.4 报告生成
+~~~~~~~~~~~~
+
+.. _141-功能描述:
+
+1.4.1 功能描述
+^^^^^^^^^^^^^^
+
+对前三个步骤的分析结果进行整理整合，生成 html格式的分析报告。
+
+.. _142-输出项:
+
+1.4.2 输出项
+^^^^^^^^^^^^
+
+-  **scRNA_report.html** 网页分析报告。
+
+-  **anno_decon_sorted.bam** 排序后的
+   anno_decon.bam文件，可用于后续分析。
+
+-  **anno_decon_sorted.bam.bai** 排序后的 anno_decon.bam文件的 bai文件。
+
+-  **attachment** 目录内包括细胞过滤的结果 QC和降维聚类的结果
+   Clustering。如果分析包含 intronic reads，目录内会增加 exonic区域的
+   reads的表达量矩阵 splice_matrix以及用于 RNA velocity分析的表达量矩阵
+   RNAvelocity_matrix。
+
+-  **filter_feature.h5ad** h5ad格式的细胞表达量矩阵。
+
+-  **filter_matrix** 细胞表达量矩阵。
+
+-  **metrics_summary.xls** 部分参数的结果统计。
+
+-  **raw_matrix** 所有beads的表达量矩阵。
+
+.. _2-结果报告说明:
+
+2. 结果报告说明
+---------------
+
+网页报告由\ **SUMMARY**\ 和 **ANALYSIS**\ 组成，可点击切换。
+
+**SUMMARY**\ 包括 **Sample information**\ 、 **Beads to cells**\ 、
+**Summary**\ 、 **Sequencing**\ 和 **Mapping & Annotation**\ 五部分。
+
+.. _21-sample-information:
+
+2.1 Sample information
+~~~~~~~~~~~~~~~~~~~~~~
+
+-  **Estimated number of cell** 细胞数目
+
+-  **Median UMI counts per cell** 细胞UMIs中位数
+
+-  **Median genes per cell** 细胞基因中位数
+
+-  **Mean reads per cell** 细胞平均reads数
+
+.. _22-beads-to-cells:
+
+2.2 Beads to cells
+~~~~~~~~~~~~~~~~~~
+
+-  左图展示了 beads的 UMIs数目分布
+   ,并推测出存在细胞的液滴内的磁珠深蓝色区域）、低UMIs和背景磁珠混合区域（浅蓝色渐变区域）、背景磁珠（位于空液滴的磁珠，灰色区灰色区域）。来自同一细胞的不同
+   mRNA会带有相同的磁珠条形码序列和随机的
+   UMI序列，但由于建库过程中存在的凋亡损伤细胞所释放到背景环境中的
+   mRNA会混入反 应体系中，所以空液滴内磁珠也会捕获到环境中的 mRNA。
+
+-  右图展示了每个有效液滴中包含的磁珠数目统计。
+
+.. _23-summary:
+
+2.3 Summary
+~~~~~~~~~~~
+
+.. figure:: https://s2.loli.net/2022/09/27/3vSYEadXxWqo7Tm.png
+   :alt: 
+
+-  **Sample name** 样本名称
+
+-  **Species** 样本物种名称
+
+-  **Estimated number of cell** 鉴定到细胞数目
+
+-  **Mean reads per cell** 细胞平均reads数目
+
+-  **Mean UMI count per cell** 细胞平均UMI数目
+
+-  **Median UMI counts per cell** 细胞UMI中位数
+
+-  **Total genes detected** 检测到的总基因种类数目
+
+-  **Mean genes per cell** 细胞平均基因数目
+
+-  **Median genes per cell** 细胞基因中位数
+
+-  **Fraction Reads in cells**
+   比对到转录本上的reads位于有效液滴内beads的比例
+
+-  **Sequencing saturation** 测序饱和度
+
+-  **Number of cells used for clustering** 质控后用于聚类分析的细胞数目
+
+.. _24-sequencing:
+
+2.4 Sequencing
+~~~~~~~~~~~~~~
+
+.. figure:: https://s2.loli.net/2022/09/27/XTiRYeLK4ozQyFE.png
+   :alt: 
+
+-  **Number of reads** 下机数据reads总数。
+
+-  **Reads pass QC** 通过质控的reads数目。
+
+-  **Reads with exactly matched barcodes**
+   完全匹配上不需要错配纠错的cell barcode的reads数目。
+
+-  **Reads with failed barcodes** 配对cell
+   barcode白名单失败的reads数目。
+
+-  **Reads filtered on low quality** cell
+   barcode含N或不满足质量值条件而被舍弃的reads数目。
+
+-  **Q30 bases in Cell Barcode** cell
+   barcode区域碱基质量值＞30的碱基个数占cell barcode区域碱基总数百分比。
+
+-  **Q30 bases in UMI**
+   UMI区域碱基质量值＞30的碱基个数占UMI区域碱基总数百分比。
+
+-  **Q30 bases in reads**
+   序列碱基质量值＞30的碱基个数占总碱基总数百分比。
+
+.. _25-mapping--annotation:
+
+2.5 Mapping & Annotation
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. figure:: https://s2.loli.net/2022/09/27/DkwT3hWPaxcmfHd.png
+   :alt: 
+
+-  **Reads pass QC** 通过质控的 reads数目。
+
+-  **Mapped reads** 比对上参考基因组的reads数目。
+
+-  **Plus strand** 比对上参考基因组正链的reads数目。
+
+-  **Minus strand** 比对上参考基因组负链的reads数目。
+
+-  **Mitochondria ratio**
+   比对上参考基因组中线粒体染色体的reads比例（默认线粒体染色体名称为chrM）。
+
+-  **Mapping quality corrected reads**
+   比对到多个位置的reads，将比对到外显子区域的条目设置成primary
+   hit并将MAPQ调整成255，统计调整质量值的reads数目。
+
+-  **Reads Mapped to Genome (Map Quality >= 0)**
+   比对上参考基因组的reads比例。
+
+-  **Reads mapped to exonic regions** 比对上外显子区域的reads比例。
+
+-  **Reads mapped to intronic regions** 比对上内含子区域的reads比例。
+
+-  **Reads mapped antisense to gene**
+   比对上基因的reads中，比对上反义链的比例。
+
+-  **Reads mapped to intergenic regions** 比对上基因间区的reads比例。
+
+-  **Include introns**
+   分析中是否包含比对到内含子区域的reads用于表达量计算。
+
+**ANALYSIS包括 Cluster、 Marker、 Cell Annotation和 Saturation。**
+
+.. _26-cluster:
+
+2.6 Cluster
+~~~~~~~~~~~
+
+.. figure:: https://s2.loli.net/2022/09/27/1e7u4WECF9jcr5x.png
+   :alt: 
+
+-  左边UMAP图展示的是通过
+   lovain算法对每个细胞进行聚类，聚为同一类的细胞具有相似的表达谱。每个点代表一个细胞，并按照不同的细胞类别予以着色。
+
+-  右边UMAP图 展示的是每个细胞的中 UMI数分布。利用
+   UMAP算法处理得到二维横纵坐标，每个点代表一个细胞，并按照
+   UMI数不同予以着色。
+
+.. _27-marker:
+
+2.7 Marker
+~~~~~~~~~~
+
+.. figure:: https://s2.loli.net/2022/09/27/M5ia64oUk1GyPOx.png
+   :alt: 
+
+显示了每个细胞类别中差异表达基因。每个基因在每个簇与其余样品之间进行差异表达测试。
+P-val值是表达差异的统计显著性的量度， P-val值越小，与理论相似程度越高。
+p_val_adj是基于 bonferroni校正，使用数据集中的所有基因进行调整后的 p值。
+avg_log2FC是指一个簇中某基因表达与其他细胞中平均表达比例的对数值。
+pct.1在当前 cluster细胞中检测到该基因表达的细胞比例 pct.2 是在其它
+cluster细胞中检测到该基因表达的细胞比例 。
+
+.. _28-cell-annotation:
+
+2.8 Cell Annotation
+~~~~~~~~~~~~~~~~~~~
+
+.. figure:: https://s2.loli.net/2022/09/27/3tGPLuOfQYpHNqa.png
+   :alt: 
+
+基于R包 **scHCL**\ (注释物种为人 )和 **scMCA**\ (注释物种为小鼠
+)的自动注释结果。只有当物种为 **Human**\ 和
+**Mouse**\ 时会得到该注释结果，其他物种时报告显示\ *There is no such
+species reference for annnotation.*\ 。
+
+.. _29-saturation:
+
+2.9 Saturation
+~~~~~~~~~~~~~~
+
+.. figure:: https://s2.loli.net/2022/09/27/DIZ681Sa7RiljMn.png
+   :alt: 
+
+-  左边曲线图展示了不同比例采样测序深度的测序饱和度指标。
+   测序饱和度受测序深度和文库复杂性的影响 ，当所有
+   mRNA转录本都已测序时，它接近 1.0 (100%)。
+   曲线末端接近平滑状态说明测序达到饱和，因为继续增加测序量，检测到的转录本也不会有特别大的变化
+   。
+
+-  右边曲线图展示了不同比例 采样测序深度的每个细胞的基因中位数 。
+   曲线末端接近平滑状态说明测序达到饱和，因为继续增加测序量，每个细胞检测到的基因数也不会有特别大的变化
+   。
