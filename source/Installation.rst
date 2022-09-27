@@ -15,12 +15,12 @@ DNBelab_C_Series_HT_scRNA-analysis-software分析软件可基于conda环境、do
 -  centos 7.x 64-bit operating system (Linux kernel 3.10.0, compatible
    with higher software and hardware configuration).
 
-Conda
+1. Conda
 -----
 
 .. _1-conda安装:
 
-1. Conda安装
+1.1 Conda安装
 ~~~~~~~~~~~~
 
 Conda是一个开源的软件包管理系统和环境管理系统，可在Windows，macOS和Linux上运行。Conda
@@ -39,12 +39,12 @@ Conda是一个开源的软件包管理系统和环境管理系统，可在Window
 
 .. _2-dnbc4tools环境安装:
 
-2. dnbc4tools环境安装
+1.2 dnbc4tools环境安装
 ~~~~~~~~~~~~~~~~~~~~~
 
 .. _21-clone-repo:
 
-2.1. Clone repo
+1.2.1 Clone repo
 ^^^^^^^^^^^^^^^
 
 `github <https://github.com/MGI-tech-bioinformatics/DNBelab_C_Series_HT_scRNA-analysis-software>`__\ 地址，下载
@@ -57,7 +57,7 @@ Conda是一个开源的软件包管理系统和环境管理系统，可在Window
 
 .. _22-create-dnbc4tools-environment:
 
-2.2 Create DNBC4tools environment
+1.2.2 Create DNBC4tools environment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 基于conda创建dnbc4tools环境
@@ -76,7 +76,7 @@ Conda是一个开源的软件包管理系统和环境管理系统，可在Window
 
 .. _3-更新:
 
-3. 更新
+1.2.3 更新
 ~~~~~~~
 
 在版本更新时，不需要对环境进行重新安装，只需要更新python包dnbc4tools
@@ -90,12 +90,12 @@ Conda是一个开源的软件包管理系统和环境管理系统，可在Window
    git clone https://github.com/MGI-tech-bioinformatics/DNBelab_C_Series_HT_scRNA-analysis-software.git
    chmod 755 -R DNBelab_C_Series_HT_scRNA-analysis-software
 
-基于容器技术
+2. 基于容器技术
 ------------
 
 .. _1-docker:
 
-1. docker
+2.1 docker
 ~~~~~~~~~
 
 Docker
@@ -112,7 +112,7 @@ Documentation <https://docs.docker.com/engine/install/>`__
 
 .. _2-singularity:
 
-2. singularity
+2.2 singularity
 ~~~~~~~~~~~~~~
 
 singularity 是一个容器平台。 Singularity
