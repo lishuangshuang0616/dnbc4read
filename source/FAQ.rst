@@ -10,13 +10,13 @@
 
 -  cDNA：
 .. figure:: https://s2.loli.net/2022/09/27/xOMpQlhtEZHJofB.png
-   :align: left
-   :width: 40%
+   :align: center
+   :width: 45%
 
 -  oligo：
 .. figure:: https://s2.loli.net/2022/09/27/IzaBlQOb2SvEjrW.png
-   :align: left
-   :width: 40%
+   :align: center
+   :width: 45%
 
 软件分析中使用目录\ **DNBC4tools/config**\ 内的json文件来识别cell
 barcode、umi、read等序列信息。
