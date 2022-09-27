@@ -457,8 +457,7 @@ beads对应信息。
 
 -  **cellCount_report.csv** 细胞统计信息文件。
 
--  | **anno_decon_sorted.bam** 排序后的 anno_decon.bam（将合并后的细胞
-   | tag信息存入 bam文件 ）文件。
+-  **anno_decon_sorted.bam** 排序后的 anno_decon.bam（将合并后的细胞tag信息存入 bam文件 ）文件。
 
 -  **cell_count_detail.xls** 每个细胞中基因、umi的组合测序 reads的数量。
 
