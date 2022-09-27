@@ -138,10 +138,9 @@ json文件key对应的tag信息
      cell barcode中，取第 99分位 Barcode对应的 UMI数目除以 10，作为
      cut-off。所有 cell barcode中对应的 UMI数目高于该
      cut-off即为细胞，否则为背景 ），然后使用 emptydrops对低 umi的
-     beads与背景 beads进行区分（确定背景空液滴 集合，使用
+     beads与背景 beads进行区分（确定背景空液滴集合，使用
      Dirichlet-multinomial模型将其与每个 beads对应的 UMI
-     count进行差异显著性检验，差异显著即为有效液滴内 beads
-   | 否则为背景 beads）。
+     count进行差异显著性检验，差异显著即为有效液滴内 beads否则为背景 beads）。
 
 -  | barcoderanks：
    | 将 cell barcode按照UMI数目从高到低排列，并拟合曲线，曲线斜率变化大的点对应的
