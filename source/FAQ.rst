@@ -176,7 +176,7 @@ barcode的组合counts信息，即02.count/*_CB_UB_count.txt文件。
 DNBelab C4分析流程支持跳过已完成的步骤 。例如 02.count步骤中合并多
 beads分析报错，则不需要重新分析01.data步骤步骤。DNBC4tools只需要在原分析中添加参数
 ``--process count,analysis,report``\ 可以 跳过
-data的分析步骤。的分析步骤。分析结果不满意需要重新分析时，需要判定需要调整的分析参数位于哪个阶段，然后选择分析接下来的步骤。
+data的分析步骤的分析步骤。分析结果不满意需要重新分析时，需要判定需要调整的分析参数位于哪个阶段，然后选择分析接下来的步骤。
 
 在 DNBC4tools data,count,analysis,report中有些参数在主程序
 run中没有。通常情况下这些参数使用默认值分析即可。如果确实需要修改这些参数，可使用
