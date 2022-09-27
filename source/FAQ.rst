@@ -140,17 +140,15 @@ json文件key对应的tag信息
      cut-off即为细胞，否则为背景 ），然后使用 emptydrops对低 umi的
      beads与背景 beads进行区分（确定背景空液滴 集合，使用
      Dirichlet-multinomial模型将其与每个 beads对应的 UMI
-     count进行差异显著性检验，差异显著即为 有效液滴内 beads
+     count进行差异显著性检验，差异显著即为有效液滴内 beads
    | 否则为背景 beads）。
 
 -  | barcoderanks：
-   | 将 cell barcode按照
-     UMI数目从高到低排列，并拟合曲线，曲线斜率变化大的点对应的
+   | 将 cell barcode按照UMI数目从高到低排列，并拟合曲线，曲线斜率变化大的点对应的
      UMI数目即为 cut-off 所有 cell barcode对应的 UMI数目高于该
      cut-off为有效液滴内 beads，否则为背景 beads。
 
-如果对获取的细胞结果不满意，可更换cell calling方法重新进行计算或者使用
-forcecells确定使用 umi数量排序前 N个 beads用于分析。
+如果对获取的细胞结果不满意，可更换cell calling方法重新进行计算或者使用forcecells确定使用 umi数量排序前 N个 beads用于分析。
 
 .. _3-磁珠合并原理:
 
