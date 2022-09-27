@@ -17,8 +17,8 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'DNBC4tools'
-copyright = '2022, MGI Tech Co., Ltd.'
+project = 'dnbc4tools'
+copyright = '2022, lishuangshuang.'
 author = 'lishuangshuang'
 
 # The full version, including alpha/beta/rc tags
