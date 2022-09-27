@@ -662,6 +662,10 @@ beads对应信息。
 
 2.2 Beads to cells
 ~~~~~~~~~~~~~~~~~~
+.. figure:: https://s2.loli.net/2022/09/27/aIsnpq9HQE3XKWL.png
+   :align: center
+   :width: 50%
+   ..
 
 -  左图展示了 beads的 UMIs数目分布
    ,并推测出存在细胞的液滴内的磁珠深蓝色区域）、低UMIs和背景磁珠混合区域（浅蓝色渐变区域）、背景磁珠（位于空液滴的磁珠，灰色区灰色区域）。来自同一细胞的不同
@@ -677,7 +681,9 @@ beads对应信息。
 ~~~~~~~~~~~
 
 .. figure:: https://s2.loli.net/2022/09/27/3vSYEadXxWqo7Tm.png
-   :alt: 
+   :align: center
+   :width: 50%
+   ..
 
 -  **Sample name** 样本名称
 
@@ -710,7 +716,9 @@ beads对应信息。
 ~~~~~~~~~~~~~~
 
 .. figure:: https://s2.loli.net/2022/09/27/XTiRYeLK4ozQyFE.png
-   :alt: 
+   :align: center
+   :width: 50%
+   ..
 
 -  **Number of reads** 下机数据reads总数。
 
@@ -740,7 +748,9 @@ beads对应信息。
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. figure:: https://s2.loli.net/2022/09/27/DkwT3hWPaxcmfHd.png
-   :alt: 
+   :align: center
+   :width: 50%
+   ..
 
 -  **Reads pass QC** 通过质控的 reads数目。
 
@@ -780,7 +790,9 @@ beads对应信息。
 ~~~~~~~~~~~
 
 .. figure:: https://s2.loli.net/2022/09/27/1e7u4WECF9jcr5x.png
-   :alt: 
+   :align: center
+   :width: 50%
+   ..
 
 -  左边UMAP图展示的是通过
    lovain算法对每个细胞进行聚类，聚为同一类的细胞具有相似的表达谱。每个点代表一个细胞，并按照不同的细胞类别予以着色。
@@ -795,7 +807,9 @@ beads对应信息。
 ~~~~~~~~~~
 
 .. figure:: https://s2.loli.net/2022/09/27/M5ia64oUk1GyPOx.png
-   :alt: 
+   :align: center
+   :width: 50%
+   ..
 
 显示了每个细胞类别中差异表达基因。每个基因在每个簇与其余样品之间进行差异表达测试。
 P-val值是表达差异的统计显著性的量度， P-val值越小，与理论相似程度越高。
@@ -810,7 +824,9 @@ cluster细胞中检测到该基因表达的细胞比例 。
 ~~~~~~~~~~~~~~~~~~~
 
 .. figure:: https://s2.loli.net/2022/09/27/3tGPLuOfQYpHNqa.png
-   :alt: 
+   :align: center
+   :width: 50%
+   ..
 
 基于R包 **scHCL**\ (注释物种为人 )和 **scMCA**\ (注释物种为小鼠
 )的自动注释结果。只有当物种为 **Human**\ 和
@@ -823,7 +839,9 @@ species reference for annnotation.*\ 。
 ~~~~~~~~~~~~~~
 
 .. figure:: https://s2.loli.net/2022/09/27/DIZ681Sa7RiljMn.png
-   :alt: 
+   :align: center
+   :width: 50%
+   ..
 
 -  左边曲线图展示了不同比例采样测序深度的测序饱和度指标。
    测序饱和度受测序深度和文库复杂性的影响 ，当所有
