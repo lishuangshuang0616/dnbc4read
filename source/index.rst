@@ -8,7 +8,7 @@ DNBelab C4 生信分析软件安装使用说明书!
 
 .. figure::  /img/DNBelabC4.jpg
    :align: center
-   :width: 20%
+   :width: 30%
 
    ..
 
