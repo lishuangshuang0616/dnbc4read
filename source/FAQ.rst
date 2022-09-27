@@ -23,7 +23,7 @@ barcode、umi、read等序列信息。
 
 json文件格式如下：
 
-.. code:: json
+.. code:: shell
 
    {
        "cell barcode tag":"CB",
@@ -159,6 +159,7 @@ forcecells确定使用 umi数量排序前 N个 beads用于分析。
 
 大磁珠携带有两种接头，其中带有umi和polyA的捕获mRNA，另一种结合引物结合小磁珠，与小磁珠结合的序列长度较短构建了oligo文库。oligo文库结构：
 -  oligo：
+
 .. figure:: https://s2.loli.net/2022/09/27/IzaBlQOb2SvEjrW.png
    :align: center
    :width: 50%
