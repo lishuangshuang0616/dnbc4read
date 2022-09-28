@@ -149,28 +149,10 @@ json文件key对应的tag信息
 
 如果对获取的细胞结果不满意，可更换cell calling方法重新进行计算或者使用forcecells确定使用 umi数量排序前 N个 beads用于分析。
 
-.. _3-磁珠合并原理:
 
-3. 磁珠合并原理？
------------------
+.. _3-对某些参数不满意重新分析:
 
-大磁珠携带有两种接头，其中带有umi和polyA的捕获mRNA，另一种结合引物结合小磁珠，与小磁珠结合的序列长度较短构建了oligo文库。oligo文库结构：
-
-.. figure:: https://s2.loli.net/2022/09/27/IzaBlQOb2SvEjrW.png
-   :align: center
-   :width: 50%
-
-oligo文库左边绿色这部分为大磁珠的cell barcode，右边为小磁珠的cell
-barcode和umi序列（cell
-barcode为小磁珠身份信息，umi为去除pcr作用），通过对oligo的下机数据分析得到大磁珠的cell
-barcode和小磁珠的cell
-barcode的组合counts信息，即02.count/*_CB_UB_count.txt文件。
-
-相同液滴内多个大磁珠会结合相似的小磁珠（种类和丰度，符合泊松分布），根据上面原理，计算大磁珠间的相似性，得到同一液滴内的大磁珠，合并同一液滴内大磁珠的umi信息。02.count/*_barcodeTranslate.txt文件为beads对应细胞信息。
-
-.. _4-对某些参数不满意重新分析:
-
-4. 对某些参数不满意，重新分析？
+3. 对某些参数不满意，重新分析？
 -------------------------------
 
 DNBelab C4分析流程支持跳过已完成的步骤 。例如 02.count步骤中合并多
