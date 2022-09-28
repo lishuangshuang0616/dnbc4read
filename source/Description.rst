@@ -1,7 +1,7 @@
 结果说明
 ========
 
-DNBelab C4流程分析顺利执行完后， 指定的输出目录结构如下：
+DNBelab C4流程分析顺利执行完后，指定的输出目录结构如下：
 
 -  **01.data** 提取 barcode和
    UMI序列，并对下机数据进行质控，与参考基因组进行比对注释生成的bam文件，获取所有
@@ -443,7 +443,7 @@ beads对应信息。
 -  **barcodeTranslate_hex.txt** barcodeTranslate.txt中 beads的 cell
    barcode为十六进制 。
 
--  **barcodeTranslate.txt** 在同一 液滴 中的 beads的 cell barcode组合
+-  **barcodeTranslate.txt** 在同一液滴中的 beads的 cell barcode组合
    的文件。第一列磁珠 beads barcode，第二列为 cell
    ID。（v2版本中与combined_list.txt相同）
 
@@ -461,7 +461,7 @@ beads对应信息。
 
 -  **cell_count_detail.xls** 每个细胞中基因、umi的组合测序 reads的数量。
 
--  **saturation.xls** 不同fraction饱和度分析结果 文件。
+-  **saturation.xls** 不同fraction饱和度分析结果文件。
 
 部分结果内容展示：
 
@@ -574,14 +574,14 @@ beads对应信息。
 
 -  **QCobject.RDS** rds格式的文件用于存储 QC的结果用于后续降维聚类分析。
 
-2）降维聚类 输出文件位于输出目录下的 **Clustering**\ 目录内。
+2）降维聚类输出文件位于输出目录下的 **Clustering**\ 目录内。
 
 -  **clustering_plot.png** 细胞聚类结果的 UMAP展示图片。
 
 -  **cluster.csv** 记录每个细胞
    meta数据的表格文件（包括群体、umap坐标、umi数量、基因数量和预测的细胞类型）。
 
--  **cluster_cell.stat** 细胞聚类的结果及每 个类群的细胞数目统计。
+-  **cluster_cell.stat** 细胞聚类的结果及每个类群的细胞数目统计。
 
 -  **marker.csv** 所有
    marker基因的表格文件第一列为基因名，第二列为群体、第三列矫正后的
@@ -669,7 +669,7 @@ beads对应信息。
    ,并推测出存在细胞的液滴内的磁珠深蓝色区域）、低UMIs和背景磁珠混合区域（浅蓝色渐变区域）、背景磁珠（位于空液滴的磁珠，灰色区灰色区域）。来自同一细胞的不同
    mRNA会带有相同的磁珠条形码序列和随机的
    UMI序列，但由于建库过程中存在的凋亡损伤细胞所释放到背景环境中的
-   mRNA会混入反 应体系中，所以空液滴内磁珠也会捕获到环境中的 mRNA。
+   mRNA会混入反应体系中，所以空液滴内磁珠也会捕获到环境中的 mRNA。
 
 -  右图展示了每个有效液滴中包含的磁珠数目统计。
 
@@ -791,7 +791,7 @@ beads对应信息。
 -  左边UMAP图展示的是通过
    lovain算法对每个细胞进行聚类，聚为同一类的细胞具有相似的表达谱。每个点代表一个细胞，并按照不同的细胞类别予以着色。
 
--  右边UMAP图 展示的是每个细胞的中 UMI数分布。利用
+-  右边UMAP图展示的是每个细胞的中 UMI数分布。利用
    UMAP算法处理得到二维横纵坐标，每个点代表一个细胞，并按照
    UMI数不同予以着色。
 
