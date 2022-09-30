@@ -122,11 +122,6 @@ json文件key对应的tag信息
    cell barcode:R1:1-10、R1:11-20
    read 1:R2:1-10,R2:17-26,R2:33-42
    
-如果cDNA和oligo文库与其他文库混测没有设置暗反应,使用
-
-`DNBelabC4_scRNA_beads_noDarkReaction_readStructure.json <https://raw.githubusercontent.com/lishuangshuang0616/dnbc4read/main/json/DNBelabC4_scRNA_beads_noDarkReaction_readStructure.json>`_
-和
-`DNBelabC4_scRNA_oligo_noDarkReaction_readStructure.json <https://raw.githubusercontent.com/lishuangshuang0616/dnbc4read/main/json/DNBelabC4_scRNA_oligo_noDarkReaction_readStructure.json>`_
 
 其他测序策略可自定义json文件，根据位置信息填写location。
 
