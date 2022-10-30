@@ -6,7 +6,7 @@
 1.流程分析原理概览
 ------------------
 
-.. figure:: https://s2.loli.net/2022/09/23/Nf2cTqgrWJv3uYe.png
+.. figure:: ./img/pipeline.png
    :alt: image-20220924114150127
    :width: 60%
 
