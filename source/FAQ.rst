@@ -135,6 +135,7 @@ cDNA的R1和oligo的R1都进行了暗反应,oligo的R2没有进行暗反应时�
 --------------------------------
 
 默认的 cell calling方法是 emptydrops。
+
 -  emptydrops:
 
    | 先判定有效液滴 beads先采用高 umi阈值法预期捕获 N个
