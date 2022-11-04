@@ -118,6 +118,7 @@ cDNA的R1和oligo的R1R2都进行了暗反应时位置信息
 cDNA的R1和oligo的R1都进行了暗反应,oligo的R2没有进行暗反应时位置信息
 
 .. code:: bash
+
    cDNA 
    cell barcode:R1:1-10、R1:11-20
    umi:R1:21-30
