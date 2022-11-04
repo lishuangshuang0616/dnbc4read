@@ -69,6 +69,7 @@ Conda是一个开源的软件包管理系统和环境管理系统，可在Window
 
    source /miniconda3/bin/activate
    conda env create -f DNBC4tools.yaml -n DNBC4tools
+   conda activate DNBC4tools
    Rscript -e "devtools::install_github(c('chris-mcginnis-ucsf/DoubletFinder','ggjlab/scHCL','ggjlab/scMCA'),force = TRUE);"
 
 如果使用wdl去运行流程需要下载cromwell
@@ -106,7 +107,7 @@ Conda是一个开源的软件包管理系统和环境管理系统，可在Window
 Docker是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的镜像中，然后发布到任何流行的Linux或Windows操作系统的机器上，也可以实现虚拟化。
 
 服务器安装docker可参考\ `Install Docker Engine \| Docker
-Documentation <https://docs.docker.com/engine/install/>`__
+Documentation <https://docs.docker.com/engine/install/>`__\ ，需要root权限
 
 .. code:: bash
 
@@ -120,11 +121,9 @@ Documentation <https://docs.docker.com/engine/install/>`__
 
 singularity是一个容器平台。Singularity旨在以简单、可移植和可重现的方式在HPC集群上运行复杂的应用程序。
 
-singularity安装可参考\ https://docs.sylabs.io/guides/3.5/user-guide/introduction.html
+singularity安装可参考\ https://docs.sylabs.io/guides/3.5/user-guide/introduction.html\ ，需要root权限
 
 .. code:: bash
 
    # 创建sif文件
    singularity build dnbc4tools.sif docker://lishuangshuang3/dnbc4tools
-
-
