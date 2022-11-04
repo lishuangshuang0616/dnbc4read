@@ -79,21 +79,38 @@ Count 每种基因类型的数目。
 
    $cat gtf_type.txt
 
+   
+
    Type	Count
+
    protein_coding	21884
+
    processed_pseudogene	9999
+
    lncRNA	9949
+
    TEC	3237
+
    unprocessed_pseudogene	2718
+
    miRNA	2206
+
    snoRNA	1507
+
    snRNA	1381
+
    misc_RNA	562
+
    rRNA	354
+
    transcribed_processed_pseudogene	300
+
    transcribed_unprocessed_pseudogene	272
+
    IG_V_gene	218
+
    IG_V_pseudogene	158
+
    TR_V_gene	144
 
 **Notice**\ ：--type选择需要根据gtf类型的tag来选择，如ensemble是\ ``--type gene_biotype``,genecode是\ ``--type gene_type``\ 。
@@ -253,7 +270,7 @@ run命令为运行主程序
 |                  |           | calling鉴定有效液滴内beads的        |
 |                  |           | 方法，可选barcoderanks,emptydrops。 |
 +------------------+-----------+-------------------------------------+
-| --expectcells    | Integer   | 默认：3000。期望细胞数，仅当c      |
+| --expectcells    | Integer   | 默认：3000。期望细胞数，仅当c       |
 |                  |           | alling_method为emptydrops时参数有效 |
 |                  |           | 。期望细胞数建议按照投入活细胞数量  |
 |                  |           | 的50%去设置（细胞捕获率约为50%）。  |
