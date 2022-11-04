@@ -253,7 +253,7 @@ run命令为运行主程序
 |                  |           | calling鉴定有效液滴内beads的        |
 |                  |           | 方法，可选barcoderanks,emptydrops。 |
 +------------------+-----------+-------------------------------------+
-| --expectcells    | Integer   | 默认：3000。期望细胞数，仅当c       |
+| --expectcells    | Integer   | 默认：3000。期望细胞数，仅当c      |
 |                  |           | alling_method为emptydrops时参数有效 |
 |                  |           | 。期望细胞数建议按照投入活细胞数量  |
 |                  |           | 的50%去设置（细胞捕获率约为50%）。  |
