@@ -31,67 +31,36 @@ json文件格式如下：
 .. code:: json
 
    {
-
        "cell barcode tag":"CB",
-
        "cell barcode":[
-
    	{
-
    	    "location":"R1:1-10",
-
                "distance":"1",
-
                "white list":[
-
                    "TAACAGCCAA",
-
                    "CTAAGAGTCC",
-
                    ...
-
                    "GTCTTCGGCT"
-
                ]
-
    	},
-
    	{
-
    	    "location":"R1:11-20"
-
                "distance":"1",
-
                "white list":[
-
                    "TAACAGCCAA",
-
                    "CTAAGAGTCC",
-
                    ...
-
                    "GTCTTCGGCT"
-
                ]
-
    	},
-
        ],
-
        "UMI tag":"UR",
-
        "UMI":{
-
    	"location":"R1:21-30",
-
        },
-
        "read 1":{
-
    	"location":"R2:1-100",
-
        }
-
    }
 
 json文件key对应的tag信息
@@ -139,37 +108,23 @@ cDNA的R1和oligo的R1R2都进行了暗反应时位置信息
 .. code:: bash
 
    cDNA 
-
    cell barcode:R1:1-10、R1:11-20
-
    umi:R1:21-30
-
    read 1:R2:1-100
-
    oligo
-
    cell barcode:R1:1-10、R1:11-20
-
    read 1:R2:1-30
 
 cDNA的R1和oligo的R1都进行了暗反应,oligo的R2没有进行暗反应时位置信息
 
 .. code:: bash
-
    cDNA 
-
    cell barcode:R1:1-10、R1:11-20
-
    umi:R1:21-30
-
    read 1:R2:1-100
-
    oligo
-
    cell barcode:R1:1-10、R1:11-20
-
-   read 1:R2:1-10,R2:17-26,R2:33-42
-   
+   read 1:R2:1-10,R2:17-26,R2:33-42 
 
 其他测序策略可自定义json文件，根据位置信息填写location。
 
