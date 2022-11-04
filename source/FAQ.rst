@@ -1,12 +1,18 @@
 常见问题
 ========
 
-.. _1不同测序策略模式如何设置参数软件怎么适配分析:
+.. _1不同测序策略模式和试剂如何设置参数获取文库结构信息软件如何适配分析:
 
-1.不同测序策略模式如何设置参数，软件怎么适配分析？
---------------------------------------------------
+1.不同测序策略模式和试剂如何设置参数获取文库结构信息，软件如何适配分析？
+------------------------------------------------------------------------
 
-2.0版本试剂的文库结构
+我们设置了多个参数来读取文库的结构，包括--chemistry、--darkreaction和--customize。
+
+在使用默认参数时，软件会自动识别是否进行了暗反应以及试剂的版本。当然我们也可以使用--chemistry、--darkreaction来定义它。目前--chemistry包括"scRNAv1HT",
+和"scRNAv2HT"，--darkreaction可以分别对cDNA的R1和oligo的R1R2进行设置。比如cDNA的R1设置暗反应，oligo的R1设置暗反应，R2不设置暗反应，那么我们可以使用--darkreaction
+"R1,R1"。如果--chemistry、--darkreaction依然无法来读取文库结构，我们可以使用--customize来自定义文库结构。
+
+``scRNAv1HT``\ 试剂的文库结构
 
 -  cDNA：
 .. figure:: https://s2.loli.net/2022/09/27/xOMpQlhtEZHJofB.png
@@ -18,44 +24,74 @@
    :align: center
    :width: 45%
 
-软件分析中使用目录\ **DNBC4tools/config**\ 内的json文件来识别cell
-barcode、umi、read等序列信息。
+分析中使用json文件来识别cell barcode、umi、read等序列信息。
 
 json文件格式如下：
 
-.. code:: shell
+.. code:: json
 
    {
+
        "cell barcode tag":"CB",
+
        "cell barcode":[
+
    	{
+
    	    "location":"R1:1-10",
+
                "distance":"1",
+
                "white list":[
+
                    "TAACAGCCAA",
+
                    "CTAAGAGTCC",
+
                    ...
+
                    "GTCTTCGGCT"
+
                ]
+
    	},
+
    	{
+
    	    "location":"R1:11-20"
+
                "distance":"1",
+
                "white list":[
+
                    "TAACAGCCAA",
+
                    "CTAAGAGTCC",
+
                    ...
+
                    "GTCTTCGGCT"
+
                ]
+
    	},
+
        ],
+
        "UMI tag":"UR",
+
        "UMI":{
+
    	"location":"R1:21-30",
+
        },
+
        "read 1":{
+
    	"location":"R2:1-100",
+
        }
+
    }
 
 json文件key对应的tag信息
@@ -98,28 +134,40 @@ json文件key对应的tag信息
 | read 2                    | read 2 location                         |
 +---------------------------+-----------------------------------------+
 
-在默认分析中，cDNA文库和oligo文库分开测序，且cDNA和oligo将固定序列进行了暗反应。使用默认参数，即\ ``DNBelabC4_scRNA_beads_readStructure.json``\ 和\ ``DNBelabC4_scRNA_oligo_readStructure.json``
+cDNA的R1和oligo的R1R2都进行了暗反应时位置信息
 
-.. code:: 
+.. code:: bash
 
    cDNA 
+
    cell barcode:R1:1-10、R1:11-20
+
    umi:R1:21-30
+
    read 1:R2:1-100
+
    oligo
+
    cell barcode:R1:1-10、R1:11-20
+
    read 1:R2:1-30
 
-如果cDNA文库和oligo文库在一张芯片测序，且cDNA和oligo只在R1端进行了暗反应。使用\ ``DNBelabC4_scRNA_beads_readStructure.json``\ 和\ ``DNBelabC4_scRNA_oligomix_readStructure.json``\ ，或者在DNBC4tools命令行中增加参数--mixseq。
+cDNA的R1和oligo的R1都进行了暗反应,oligo的R2没有进行暗反应时位置信息
 
-.. code:: 
+.. code:: bash
 
    cDNA 
+
    cell barcode:R1:1-10、R1:11-20
+
    umi:R1:21-30
+
    read 1:R2:1-100
+
    oligo
+
    cell barcode:R1:1-10、R1:11-20
+
    read 1:R2:1-10,R2:17-26,R2:33-42
    
 
