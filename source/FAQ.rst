@@ -8,9 +8,9 @@
 
 我们设置了多个参数来读取文库的结构，包括--chemistry、--darkreaction和--customize。
 
-在使用默认参数时，软件会自动识别是否进行了暗反应以及试剂的版本。当然我们也可以使用--chemistry、--darkreaction来定义它。目前--chemistry包括"scRNAv1HT",
-和"scRNAv2HT"，--darkreaction可以分别对cDNA的R1和oligo的R1R2进行设置。比如cDNA的R1设置暗反应，oligo的R1设置暗反应，R2不设置暗反应，那么我们可以使用--darkreaction
-"R1,R1"。如果--chemistry、--darkreaction依然无法来读取文库结构，我们可以使用--customize来自定义文库结构。
+在使用默认参数时，软件会自动识别是否进行了暗反应以及试剂的版本。当然我们也可以使用--chemistry、--darkreaction来定义它。目前--chemistry包括scRNAv1HT
+和scRNAv2HT，--darkreaction可以分别对cDNA的R1和oligo的R1R2进行设置。比如cDNA的R1设置暗反应，oligo的R1设置暗反应，R2不设置暗反应，那么我们可以使用--darkreaction
+R1,R1。如果--chemistry、--darkreaction依然无法来读取文库结构，我们可以使用--customize来自定义文库结构。
 
 ``scRNAv1HT``\ 试剂的文库结构
 
