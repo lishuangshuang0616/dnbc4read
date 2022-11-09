@@ -96,7 +96,7 @@ Count 每种基因类型的数目。
    IG_V_pseudogene	158
    TR_V_gene	144
 
-**Notice**\ ：--type选择需要根据gtf类型的tag来选择，如ensemble是\ ``--type gene_biotype``,genecode是\ ``--type gene_type``\ 。
+**Notice**\ ：--type选择需要根据gtf类型的tag来选择，如ensemble是\ ``--type gene_biotype``，genecode是\ ``--type gene_type``\ 。
 
 .. _12-过滤注释文件:
 
@@ -250,8 +250,8 @@ run命令为运行主程序
 | 参数             | 类型      | 描述                                |
 +==================+===========+=====================================+
 | --species        | String    | 样本物种名称，默认为undefined。只   |
-|                  |           | 有物种名为Homo_sapiens,Mus_musculu  |
-|                  |           | s,Human,Mouse时可进行细胞注释分析。 |
+|                  |           | 有物种名为Homo_sapiens,Mus_musculus |
+|                  |           | ,Human,Mouse时可进行细胞注释分析。 |
 +------------------+-----------+-------------------------------------+
 | --outdir         | Directory | 分析结果路径，默认为当前路径 。     |
 +------------------+-----------+-------------------------------------+
