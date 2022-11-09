@@ -787,8 +787,8 @@ cluster细胞中检测到该基因表达的细胞比例pct.2是在其它cluster�
 .. figure:: https://s2.loli.net/2022/09/27/3tGPLuOfQYpHNqa.png
    :alt: 
 
-基于R包scHCL\ **(注释物种为人 )**\ 和scMCA\ **(注释物种为小鼠)**\的自动注释结果。只有当物种为
-\**Human**\ 和\ **Mouse**\ 时会得到该注释结果，其他物种时报告显示\ *There
+基于R包**\scHCL\**(注释物种为人 )和**\scMCA\**(注释物种为小鼠)的自动注释结果。只有当物种为
+**\Human\** 和**\Mouse\** 时会得到该注释结果，其他物种时报告显示\ *There
 is no such species reference for annnotation.*\ 。
 
 .. _29-saturation:
